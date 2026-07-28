@@ -11,10 +11,7 @@ hl.config({
         border_size = 1,
         col = {
             -- Active border: 2-color gradient table + numerical angle
-            active_border = {
-                colors = { circuit_green, flame_core },
-                angle = 45,
-            },
+            active_border = flame_core,
             -- Inactive border: Single color string
             inactive_border = circuit_dim,
         },
@@ -27,17 +24,17 @@ hl.config({
     },
 
     decoration = {
-        rounding = 6,
+        rounding = 2,
         active_opacity = 1.0,
-        inactive_opacity = 0.85,
+        inactive_opacity = 0.9,
         dim_inactive = true,
-        dim_strength = 0.25,
+        dim_strength = 0.1,
 
         shadow = {
             enabled = true,
-            range = 15,
-            render_power = 3,
-            color = "#0b120cdd",
+            range = 8,
+            render_power = 50,
+            color = flame_outer,
         },
 
         blur = {
