@@ -8,8 +8,8 @@ hl.monitor({
 hl.monitor({
 	output	=	"eDP-1",
 	mode	=	"1920x1080@144",
-	position	=	"-1280x360",
-	scale	=	"1.5",
+	position	=	"-1920x0",
+	scale	=	"1",
 })
 
 -- Workspace 1 stays on the BenQ main monitor
