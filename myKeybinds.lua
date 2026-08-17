@@ -21,13 +21,18 @@ hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }))
 hl.bind("SUPER + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind("SUPER + down",  hl.dsp.focus({ direction = "down" }))
 
--- Switch workspaces with "SUPER" + [0-9]
--- Move active window to a workspace with "SUPER" + SHIFT + [0-9]
+-- Switch / Swap workspaces on current active screen with "SUPER" + physical number row keys
+-- Move active window to a workspace with "SUPER" + SHIFT + physical number row keys
 for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
-    hl.bind("SUPER + " .. key,             hl.dsp.focus({ workspace = i}))
-    hl.bind("SUPER + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
+    local code = 9 + (i % 10 == 0 and 10 or i % 10) -- Keycodes: 1->10 (key 1), 2->11 (key 2)... 0->19 (key 0)
+    hl.bind("SUPER + code:" .. code,         hl.dsp.exec_cmd("/home/omitoi/.config/hypr/swap-keybind-ws.py " .. i))
+    hl.bind("SUPER + SHIFT + code:" .. code, hl.dsp.window.move({ workspace = tostring(i) }))
 end
+
+
+
+
+
 
 -- Example special workspace (scratchpad)
 hl.bind("SUPER + S",         hl.dsp.workspace.toggle_special("magic"))
@@ -39,6 +44,8 @@ hl.bind("SUPER + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 -- Move/resize windows with "SUPER" + LMB/RMB and dragging
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })

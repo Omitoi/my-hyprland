@@ -12,11 +12,8 @@ hl.monitor({
 	scale	=	"1",
 })
 
--- Workspace 1 stays on the BenQ main monitor
-hl.workspace_rule({ workspace = 1, monitor = "HDMI-A-1", default = true })
+-- Dynamic workspace assignment across screens
 
--- Workspace 2 stays on the laptop monitor
-hl.workspace_rule({ workspace = 2, monitor = "eDP-1" })
 
 -- Send Steam to Workspace 1 (Main BenQ Screen)
 hl.window_rule({

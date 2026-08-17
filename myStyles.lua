@@ -6,13 +6,15 @@ flame_outer    = "rgb(1F2329)"       -- Primary dark
 
 hl.config({
     general = {
-        gaps_in = 1,
-        gaps_out = 1,
-        border_size = 2,
+        gaps_in = 0,
+        gaps_out = 0,
+        border_size = 0,
+
         col = {
-            active_border = flame_core,
+            active_border = circuit_dim,
             inactive_border = circuit_dim,
         },
+
         layout = "master",
         resize_on_border    =  true,
         no_focus_fallback   =  true,
@@ -23,8 +25,9 @@ hl.config({
         mfact = 0.75,
     },
     decoration = {
-        rounding = 2,
+        rounding = 0,
         active_opacity = 1.0,
+
         inactive_opacity = 1.0,
         dim_inactive = false,
         shadow = {
