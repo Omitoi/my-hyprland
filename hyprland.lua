@@ -113,3 +113,16 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
+-- Float and size Pavucontrol audio control panel (top: 36px flush with eww bar, right edge)
+hl.window_rule({
+    name  = "pavucontrol-float-size",
+    match = { class = "^(pavucontrol|org.pulseaudio.pavucontrol)$" },
+
+    float = true,
+    size  = "650 420",
+    move  = "100%-650 36",
+})
+
+
+
