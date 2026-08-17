@@ -1,6 +1,6 @@
 hl.on("hyprland.start", function ()
     -- Background Services & Core Apps (run asynchronously using &)
-    hl.exec_cmd("hyprlauncher --help > /dev/null &")
+    hl.exec_cmd("hyprlauncher --daemon &")
     hl.exec_cmd("systemctl --user start hyprpolkitagent &")
     hl.exec_cmd("hyprpaper &")
 

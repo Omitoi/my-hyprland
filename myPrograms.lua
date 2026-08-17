@@ -1,3 +1,3 @@
 terminal    = "kitty"
 fileManager = "thunar"
-menu = "hyprlauncher"
+menu = "hyprlauncher --toggle"
