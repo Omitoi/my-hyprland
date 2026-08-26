@@ -7,4 +7,9 @@ hl.on("hyprland.start", function ()
     -- Reset EWW & Start Daemon
     hl.exec_cmd("killall -q eww; eww daemon &")
     hl.exec_cmd("sleep 0.5 && eww open bar_0 && eww open bar_1 &")
+
+
+
+    -- Autostart Steam Silently in Background
+    hl.exec_cmd("steam -silent &")
 end)

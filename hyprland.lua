@@ -16,8 +16,7 @@ hl.env("XCURSOR_SIZE", "28")
 hl.env("HYPRCURSOR_SIZE", "28")
 hl.env("XCURSOR_THEME", "Adwaita")
 hl.env("HYPRCURSOR_THEME", "Adwaita")
-
-
+hl.env("GTK_ICON_THEME", "breeze-dark")
 
 ----------------
 ----  MISC  ----
@@ -32,8 +31,6 @@ hl.config({
         no_warps = true,
     },
 })
-
-
 
 ---------------
 ---- INPUT ----
@@ -70,7 +67,6 @@ hl.device({
     name        = "epic-mouse-v1",
     sensitivity = -0.5,
 })
-
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
@@ -131,6 +127,3 @@ hl.window_rule({
     size  = "650 420",
     move  = "100%-650 36",
 })
-
-
-
