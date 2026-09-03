@@ -24,13 +24,15 @@ hl.env("GTK_ICON_THEME", "breeze-dark")
 
 hl.config({
     misc = {
-        force_default_wallpaper = 1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = true, -- If true disables the random hyprland logo / anime girl background. :(
+        force_default_wallpaper   = 0,     -- Set to 0 to disable default wallpapers
+        disable_hyprland_logo     = true,  -- Disables the random hyprland logo
+        disable_splash_rendering  = true,  -- Disables the random splash quote text at the bottom
     },
     cursor = {
         no_warps = true,
     },
 })
+
 
 ---------------
 ---- INPUT ----
