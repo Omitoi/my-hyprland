@@ -11,10 +11,17 @@ hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
 closeWindowBind = hl.bind("SUPER + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
-hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind("SUPER + SHIFT + space", hl.dsp.window.float({ action = "toggle" }))
+hl.bind("SUPER + V", hl.dsp.exec_cmd("~/.config/hypr/scripts/cliphist-picker.sh"))
 hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd(menu), { release = true })
-hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("grimblast copy area"))
+
+-- Screenshots (Save to ~/Pictures/Screenshots, copy to clipboard, notify)
+hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh area"))
+hl.bind("SUPER + ALT + S",   hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh window"))
+hl.bind("Print",             hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh screen"))
+hl.bind("SUPER + Print",     hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh screen"))
+
 
 
 -- Move focus with "SUPER" + arrow keys
