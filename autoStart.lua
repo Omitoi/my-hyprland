@@ -8,7 +8,9 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("wl-paste --type image --watch cliphist store &")
 
     hl.exec_cmd("systemctl --user start hyprpolkitagent &")
-    hl.exec_cmd("hyprpaper &")
+    
+    -- Daily Wallpaper & Hyprpaper
+    hl.exec_cmd("~/.config/hypr/scripts/wallpaper.sh && hyprpaper &")
 
     -- Reset EWW & Start Daemon
     hl.exec_cmd("killall -q eww; eww daemon &")
