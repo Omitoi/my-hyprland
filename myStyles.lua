@@ -26,10 +26,10 @@ hl.config({
     },
     decoration = {
         rounding = 0,
-        active_opacity = 0.95,
+        active_opacity = 1,
 
         inactive_opacity = 0.9,
-        dim_inactive = false,
+        dim_inactive = true,
 
         shadow = {
             enabled = false,

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 WP_DIR="$HOME/.config/hypr/wallpapers"
-TARGET="$HOME/.config/hypr/current.png"
+TARGET="$HOME/.config/hypr/current.jpg"
 
 shopt -s nullglob
 files=("$WP_DIR"/*.{png,jpg,jpeg,webp})
