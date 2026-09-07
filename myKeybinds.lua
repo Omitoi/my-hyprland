@@ -22,8 +22,6 @@ hl.bind("SUPER + ALT + S",   hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.
 hl.bind("Print",             hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh screen"))
 hl.bind("SUPER + Print",     hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh screen"))
 
-
-
 -- Move focus with "SUPER" + arrow keys
 hl.bind("SUPER + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }))
@@ -38,11 +36,6 @@ for i = 1, 10 do
     hl.bind("SUPER + SHIFT + code:" .. code, hl.dsp.window.move({ workspace = tostring(i) }))
 end
 
-
-
-
-
-
 -- Example special workspace (scratchpad)
 hl.bind("SUPER + S",         hl.dsp.workspace.toggle_special("magic"))
 
@@ -54,8 +47,6 @@ hl.bind("SUPER + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-
-
 -- Laptop multimedia keys for volume and LCD brightness (with OSD overlay feedback)
 hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("~/.config/eww/scripts/osd.py volume up"),       { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("~/.config/eww/scripts/osd.py volume down"),     { locked = true, repeating = true })
@@ -63,10 +54,3 @@ hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("~/.config/eww/scripts/osd.py v
 hl.bind("XF86AudioMicMute",      hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("~/.config/eww/scripts/osd.py brightness up"),   { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("~/.config/eww/scripts/osd.py brightness down"), { locked = true, repeating = true })
-
-
--- Requires playerctl
-hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })

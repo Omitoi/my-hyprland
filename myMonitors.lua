@@ -11,18 +11,3 @@ hl.monitor({
 	position	=	"-1920x0",
 	scale	=	"1",
 })
-
--- Dynamic workspace assignment across screens
-
-
--- Send Steam to Workspace 1 (Main BenQ Screen)
-hl.window_rule({
-  match = { class = "^([Ss]team)$" },
-  workspace = "1",
-})
-
--- Send Discord to Workspace 2 (Laptop Screen)
-hl.window_rule({
-  match = { class = "^([Dd]iscord|vesktop|WebCord)$" },
-  workspace = "2",
-})
