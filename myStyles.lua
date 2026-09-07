@@ -30,6 +30,7 @@ hl.config({
 
         inactive_opacity = 0.9,
         dim_inactive = true,
+        dim_strength = 0.1,
 
         shadow = {
             enabled = false,
