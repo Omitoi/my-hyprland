@@ -4,10 +4,10 @@
 
 hl.config({
     input = {
-        kb_layout  = "cz",
+        kb_layout = "cz,us,ru,no",
         kb_variant = "",
-        kb_model   = "",
-        kb_options = "",
+        kb_model = "",
+        kb_options = "grp:shift_caps_toggle",
         kb_rules   = "",
         numlock_by_default = true,
 
