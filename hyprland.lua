@@ -3,7 +3,6 @@
 -------------------------
 
 require("myMonitors")
-require("myPrograms")
 require("myEnv")
 require("autoStart")
 require("myStyles")

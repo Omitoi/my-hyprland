@@ -7,14 +7,14 @@ hl.bind("SUPER + Tab", hl.dsp.workspace.swap_monitors({ monitor1 = "0", monitor2
 hl.bind("ALT + Tab", hl.dsp.layout("swapwithmaster master"))
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
+hl.bind("SUPER + Q", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + C", hl.dsp.window.close())
-hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
+hl.bind("SUPER + E", hl.dsp.exec_cmd("thunar"))
 
 hl.bind("SUPER + SHIFT + space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("~/.config/hypr/scripts/cliphist-picker.sh"))
 hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd(menu), { release = true })
+hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd("hyprlauncher --toggle"), { release = true })
 
 -- Screenshots (Save to ~/Pictures/Screenshots, copy to clipboard, notify)
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh area"))
