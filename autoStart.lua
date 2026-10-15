@@ -14,7 +14,7 @@ hl.on("hyprland.start", function ()
 
     -- Reset EWW & Start Daemon
     hl.exec_cmd("killall -q eww; LOCPATH=/home/omitoi/.local/share/locale LC_TIME=en_GB.UTF-8 eww daemon &")
-    hl.exec_cmd("sleep 0.5 && eww open bar_0; eww open bar_1; eww open verse_splash_0; eww open verse_splash_1 &")
+    hl.exec_cmd("sleep 0.5 && ~/.config/eww/scripts/launch-bars.sh &")
     hl.exec_cmd("~/.config/eww/scripts/popup-daemon.py &")
 
     -- Autostart Steam Silently in Background
