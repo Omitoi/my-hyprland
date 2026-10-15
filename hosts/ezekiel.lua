@@ -9,3 +9,11 @@ hl.monitor({
     position = "0x0",
     scale    = "1",
 })
+
+-- External Display Fallback
+hl.monitor({
+    output   = "",
+    mode     = "preferred",
+    position = "auto",
+    scale    = "1",
+})
