@@ -17,6 +17,10 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("sleep 0.5 && ~/.config/eww/scripts/launch-bars.sh &")
     hl.exec_cmd("~/.config/eww/scripts/popup-daemon.py &")
 
-    -- Autostart Steam Silently in Background
-    hl.exec_cmd("steam -silent &")
+    -- Autostart Steam Silently in Background (disabled on media device 'ezekiel')
+    local raw_hostname = io.popen("uname -n"):read("*l") or ""
+    local hostname = string.lower(raw_hostname:gsub("%s+", ""))
+    if hostname ~= "ezekiel" then
+        hl.exec_cmd("steam -silent &")
+    end
 end)
