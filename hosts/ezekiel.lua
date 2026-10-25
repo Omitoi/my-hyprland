@@ -22,24 +22,8 @@ hl.monitor({
 hl.env("LIBVA_DRIVER_NAME", "iHD")
 hl.env("VDPAU_DRIVER", "va_gl")
 
--- YouTube TV Kiosk Window Rules (Workspace 1, Fullscreen)
-hl.window_rule({
-    name       = "youtube-tv-kiosk",
-    match      = { class = "^(youtube-tv)$" },
-    workspace  = "1",
-    fullscreen = true,
-})
-
--- DLNA/Universal Media Player Window Rules
-hl.window_rule({
-    name       = "vlc-dlna-fullscreen",
-    match      = { class = "^(vlc)$" },
-    workspace  = "1",
-    fullscreen = true,
-})
-
--- Shortcut: SUPER + Y launches/focuses YouTube TV
-hl.bind("SUPER + Y", hl.dsp.exec_cmd("~/.local/bin/youtube-tv"))
+-- Shortcut: SUPER + Y launches YouTube in a new window on next empty workspace
+hl.bind("SUPER + Y", hl.dsp.exec_cmd("/usr/bin/python3 /home/omitoi/.local/bin/open-url-on-empty-ws.py https://youtube.com"))
 
 -- Power & Display: Maintain standby screen without DPMS sleep
 hl.config({

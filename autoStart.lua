@@ -26,7 +26,7 @@ hl.on("hyprland.start", function ()
     if hostname ~= "ezekiel" then
         hl.exec_cmd("steam -silent &")
     else
-        -- Media host: autostart YouTube TV Kiosk on workspace 1
-        hl.exec_cmd("~/.local/bin/youtube-tv &")
+        -- Media host: background Brave daemon for Brave Sync "Send to your devices"
+        hl.exec_cmd("brave --no-startup-window &")
     end
 end)
