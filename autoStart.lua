@@ -1,6 +1,11 @@
 hl.on("hyprland.start", function ()
-    -- Launch Lockscreen Immediately on Session Startup
-    hl.exec_cmd("hyprlock --immediate-render &")
+    local raw_hostname = io.popen("uname -n"):read("*l") or ""
+    local hostname = string.lower(raw_hostname:gsub("%s+", ""))
+
+    -- Launch Lockscreen Immediately on Session Startup (disabled on media device 'ezekiel')
+    if hostname ~= "ezekiel" then
+        hl.exec_cmd("hyprlock --immediate-render &")
+    end
 
     -- Background Services & Core Apps
     hl.exec_cmd("hyprlauncher --daemon &")
@@ -17,10 +22,11 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("~/.config/eww/scripts/monitor-daemon.py &")
     hl.exec_cmd("~/.config/eww/scripts/popup-daemon.py &")
 
-    -- Autostart Steam Silently in Background (disabled on media device 'ezekiel')
-    local raw_hostname = io.popen("uname -n"):read("*l") or ""
-    local hostname = string.lower(raw_hostname:gsub("%s+", ""))
+    -- Host-specific autostarts
     if hostname ~= "ezekiel" then
         hl.exec_cmd("steam -silent &")
+    else
+        -- Media host: autostart YouTube TV Kiosk on workspace 1
+        hl.exec_cmd("~/.local/bin/youtube-tv &")
     end
 end)
