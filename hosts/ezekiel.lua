@@ -17,3 +17,7 @@ hl.monitor({
     position = "auto",
     scale    = "1",
 })
+
+-- Intel UHD 620 VA-API Hardware Video Decoding
+hl.env("LIBVA_DRIVER_NAME", "iHD")
+hl.env("VDPAU_DRIVER", "va_gl")

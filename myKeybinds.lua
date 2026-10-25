@@ -10,6 +10,7 @@ hl.bind("ALT + Tab", hl.dsp.layout("swapwithmaster master"))
 hl.bind("SUPER + Q", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + C", hl.dsp.window.close())
 hl.bind("SUPER + E", hl.dsp.exec_cmd("pcmanfm"))
+hl.bind("SUPER + M", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle-music.sh"))
 
 hl.bind("SUPER + SHIFT + space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("~/.config/hypr/scripts/cliphist-picker.sh"))
@@ -54,3 +55,10 @@ hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("~/.config/eww/scripts/osd.py v
 hl.bind("XF86AudioMicMute",      hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("~/.config/eww/scripts/osd.py brightness up"),   { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("~/.config/eww/scripts/osd.py brightness down"), { locked = true, repeating = true })
+
+-- Media playback controls via playerctl
+hl.bind("XF86AudioPlay",         hl.dsp.exec_cmd("playerctl play-pause"),                         { locked = true })
+hl.bind("XF86AudioPause",        hl.dsp.exec_cmd("playerctl play-pause"),                         { locked = true })
+hl.bind("XF86AudioNext",         hl.dsp.exec_cmd("playerctl next"),                               { locked = true })
+hl.bind("XF86AudioPrev",         hl.dsp.exec_cmd("playerctl previous"),                           { locked = true })
+hl.bind("XF86AudioStop",         hl.dsp.exec_cmd("playerctl stop"),                               { locked = true })

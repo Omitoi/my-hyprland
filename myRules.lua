@@ -47,3 +47,13 @@ hl.window_rule({
     size  = "650 420",
     move  = "100%-650 36",
 })
+
+-- Float, size, and assign spotify-player to special:music scratchpad
+hl.window_rule({
+    name      = "spotify-player-music-window",
+    match     = { class = "^(spotify-player)$" },
+    workspace = "special:music",
+    float     = true,
+    size      = "900 600",
+    center    = true,
+})
